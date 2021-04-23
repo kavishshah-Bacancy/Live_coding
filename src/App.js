@@ -11,28 +11,30 @@ function App() {
   const likeClass = [];
   likeClass.push("like-button");
   const updateLikeHandler = () => {
+    console.log(like);
     if (likeflag) {
       setLike(like - 1);
-      setLikeFlag(!likeflag);
+      console.log(like);
+      setLikeFlag(false);
     } else {
       setLike(like + 1);
-      setLike(!likeflag);
+      setLikeFlag(true);
       if (disLikeflag) {
         setDisLike(disLike - 1);
-        setDisLikeFlag(!disLikeflag);
+        setDisLikeFlag(false);
       }
     }
   };
   const updateDisLikeHandler = () => {
     if (disLikeflag) {
-      setDisLike(like - 1);
-      setDisLikeFlag(!disLikeflag);
+      setDisLike(disLike - 1);
+      setDisLikeFlag(false);
     } else {
       setDisLike(disLike + 1);
-      setDisLike(!disLikeflag);
+      setDisLikeFlag(true);
       if (likeflag) {
         setLike(like - 1);
-        setLikeFlag(!likeflag);
+        setLikeFlag(false);
       }
     }
   };
